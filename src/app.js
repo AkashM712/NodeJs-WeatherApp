@@ -6,6 +6,7 @@ const { error } = require('console')
 const forcast = require('./utils/forcast')
 
 const app = express()
+const port = process.env.port || 3000
 
 // Define paths for express config
 const publicDirectory = path.join(__dirname, '../public')
@@ -104,6 +105,6 @@ app.get('*', (req, res) => {
  })
 })
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Server is up')
 })
